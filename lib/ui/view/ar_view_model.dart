@@ -6,6 +6,7 @@ import 'package:ar_flutter_plugin/managers/ar_session_manager.dart';
 import 'package:ar_flutter_plugin/models/ar_anchor.dart';
 import 'package:ar_flutter_plugin/models/ar_node.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_ar_flutter_plugin_study/ui/utils/model_paths.dart';
 import 'package:vector_math/vector_math_64.dart';
 
 class ARViewModel extends ChangeNotifier {
@@ -43,10 +44,10 @@ class ARViewModel extends ChangeNotifier {
     } else {
       var newNode = ARNode(
         type: NodeType.webGLB,
-        uri: "asset/thanos.glb",
-        scale: Vector3(0.2, 0.2, 0.2),
+        uri: ModelPaths.thanos,
+        scale: Vector3(0.1, 0.1, 0.1),
         position: Vector3(0.0, 0.0, 0.0),
-        rotation: Vector4(1.0, 0.0, 0.0, 0.0),
+        rotation: Vector4(0, 0.0, 0.0, 0.0),
       );
       bool? didAddLocalNode = await _arObjectManager.addNode(newNode);
       localObjectNode = (didAddLocalNode!) ? newNode : null;

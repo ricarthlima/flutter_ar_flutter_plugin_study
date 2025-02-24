@@ -12,7 +12,7 @@ class ARScreen extends StatelessWidget {
     final arVM = Provider.of<ARViewModel>(context);
 
     return Scaffold(
-      body: Column(
+      body: Stack(
         children: [
           ARView(
             onARViewCreated: arVM.onARViewCreated,
@@ -21,8 +21,13 @@ class ARScreen extends StatelessWidget {
           Align(
             alignment: Alignment.bottomCenter,
             child: TextButton(
-              onPressed: () {},
-              child: Text("SER INEVITÁVEL"),
+              onPressed: arVM.onLocalObjectAtOriginButtonPressed,
+              child: Text(
+                "SER INEVITÁVEL",
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
             ),
           )
         ],
