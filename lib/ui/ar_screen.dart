@@ -21,7 +21,7 @@ class ARScreen extends StatelessWidget {
           Align(
             alignment: Alignment.bottomCenter,
             child: TextButton(
-              onPressed: arVM.onLocalObjectAtOriginButtonPressed,
+              onPressed: arVM.onFileSystemObjectAtOriginButtonPressed,
               child: Text(
                 "SER INEVITÁVEL",
                 style: TextStyle(
